@@ -6,5 +6,5 @@ export AWS_ECS_REPO_DOMAIN=$AWS_ACCOUNT_NUMBER.dkr.ecr.$AWS_DEFAULT_REGION.amazo
 
 # Build process
 docker run -v /var/run/docker.sock:/var/run/docker.sock
-docker build -t $IMAGE_NAME ../
+docker build -t $IMAGE_NAME .
 docker tag $IMAGE_NAME $AWS_ECS_REPO_DOMAIN/$IMAGE_NAME:$IMAGE_VERSION
