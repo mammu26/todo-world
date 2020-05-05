@@ -8,11 +8,11 @@ pipeline {
                   }
             }
             stage('Build') {
-                  steps {
+                  agent { docker }
+        steps {
 						echo 'Building Sample Dotnet core Project'
-			    			
    							sh 'chmod +x scripts/build.sh'
-							docker exec -it jenkins sh scripts/build.sh
+							sh 'scripts/build.sh'
 							
 							
 						
