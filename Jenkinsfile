@@ -1,5 +1,5 @@
 pipeline {
-      agent any
+    
       stages {
             stage('Init') {
                   steps {
@@ -9,8 +9,11 @@ pipeline {
             stage('Build') {
                   steps {
 						echo 'Building Sample Dotnet core Project'
-						sh 'chmod +x scripts/build.sh'
-						sh 'scripts/build.sh'
+			    			node('docker') {
+   							sh 'chmod +x scripts/build.sh'
+							sh 'scripts/build.sh'
+							}
+						
                         
                   }
             }
