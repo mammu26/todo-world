@@ -12,7 +12,7 @@ pipeline {
 						echo 'Building Sample Dotnet core Project'
 			    			
    							sh 'chmod +x scripts/build.sh'
-							docker exec -it jenkins "sh scripts/build.sh"
+							docker exec -it jenkins sh scripts/build.sh
 							
 							
 						
