@@ -10,9 +10,10 @@ pipeline {
             stage('Build') {
                   steps {
 						echo 'Building Sample Dotnet core Project'
-			    			node('docker') {
+			    			node() {
    							sh 'chmod +x scripts/build.sh'
-							sh 'scripts/build.sh'
+							docker exec -it jenkins 'sh scripts/build.sh'
+							
 							}
 						
                         
