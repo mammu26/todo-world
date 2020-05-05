@@ -8,7 +8,7 @@ pipeline {
                   }
             }
             stage('Build') {
-                  agent { docker }
+                  agent  docker 
         steps {
 						echo 'Building Sample Dotnet core Project'
    							sh 'chmod +x scripts/build.sh'
